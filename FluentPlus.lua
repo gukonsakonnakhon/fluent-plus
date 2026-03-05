@@ -1825,6 +1825,7 @@ Library.MiniMessageToRichText = MiniMessageToRichText
 local New = Creator.New
 
 local GUI = New("ScreenGui", {
+	Name = "FluentPlus",
 	Parent = LocalPlayer:WaitForChild("PlayerGui"),
 })
 Library.GUI = GUI
@@ -5476,6 +5477,9 @@ ElementsTable.Dropdown = (function()
 			DropdownListLayout,
 		})
 
+		local RecalculateListPosition
+		local RecalculateListSize
+		local RecalculateCanvasSize
 		local SearchBar
 		local SearchBox
 		if Dropdown.Search then
@@ -5527,10 +5531,6 @@ ElementsTable.Dropdown = (function()
 
 			DropdownScrollFrame.Position = UDim2.fromOffset(5, 38)
 			DropdownScrollFrame.Size = UDim2.new(1, -5, 1, -43)
-
-			local RecalculateListPosition
-			local RecalculateListSize
-			local RecalculateCanvasSize
 
 			local filterToken = 0
 			local function ApplyFilter()
